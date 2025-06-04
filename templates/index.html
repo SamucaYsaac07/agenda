@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'index/style.css' %} {% static 'style.css' %}">
+<script src="{% static 'index.js' %}"></script>
+{% endblock %}
+{% block body %}
+
+<h1>Uma agenda simples</h1>
+{% for item in marcado %}
+    <div class="cartao">
+        <p> {{item.data}} </p>
+        <h3> {{item.title}} </h3>
+        <p> {{item.descricao}} </p>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,7 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import compromisso
+
 # from django.http import HttpResponse
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    marcado = compromisso.objects.all()
+    return render(request, 'index.html', )
+
+def marcar(request):
+    if request.method == "POST":
+        titulo = request.POST['titulo']
+        descricao = request.POST['descricao']
+        data = request.POST['data']
+
+        atual = compromisso.objects.create(titulo=titulo,descricao=descricao,data=data)
+        atual.save()
+        return redirect(request, "/")
+
+    else:
+        return render(request, "marcar.html")
+
+def mostrar_compromisso(request, id):
+    atual = compromisso.objects.query(id=id)
+    return render(request, "mostrar_compromisso.html", {"compromisso":atual})

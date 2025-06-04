@@ -4,9 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'index/style.css' %}">
+    {% block head %}{% endblock %}
 </head>
 <body>
-    
+    <div>
+        {% block body %}{% endblock %}
+    </div>
+    <div style="display: none;">
+        <a href="index"></a>
+        <a href="usuario"></a>
+        <a href=""></a>
+    </div>
 </body>
 </html>
