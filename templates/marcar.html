@@ -3,9 +3,15 @@
 
 {% block body %}
 <form action="marcar" method="post" class="formulario">
+
+    {% csrf_token %}
     <p>Titulo</p>
     <input type="text" name="title">
     <p>Descrição</p>
-    <textarea name="Descricao"></textarea>
+    <textarea name="descricao"></textarea>
+    <p>Dia</p>
+    <input type="date" name="data">
+    <input type="submit">
+
 </form>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'index/style.css' %} {% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'index/style.css' %} {% static 'compromisso/cartao.css' %}">
 <script src="{% static 'index.js' %}"></script>
 {% endblock %}
 {% block body %}
@@ -9,8 +10,9 @@
 {% for item in marcado %}
     <div class="cartao">
         <p> {{item.data}} </p>
-        <h3> {{item.title}} </h3>
+        <h3> {{item.titulo}} </h3>
         <p> {{item.descricao}} </p>
     </div>
 {% endfor %}
+<p><a href="marcar">Adicionar</a></p>
 {% endblock %}
