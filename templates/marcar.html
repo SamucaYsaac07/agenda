@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}{% endblock %}
+
+{% block body %}
+<form action="marcar" method="post" class="formulario">
+
+    {% csrf_token %}
+    <p>Titulo</p>
+    <input type="text" name="titulo">
+    <p>Descrição</p>
+    <textarea name="descricao"></textarea>
+    <p>Dia</p>
+    <input type="date" name="data">
+    <input type="submit">
+
+</form>
+{% endblock %}
