@@ -8,7 +8,7 @@ from .models import compromisso
 
 def index(request):
     marcado = compromisso.objects.all()
-    return render(request, 'index.html', )
+    return render(request, 'index.html', {'marcado':marcado})
 
 def marcar(request):
     if request.method == "POST":

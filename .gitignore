@@ -1,0 +1,5 @@
+# pasta pra bibliotecas virtual
+.venv
+venv
+.env
+env
